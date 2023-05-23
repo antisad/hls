@@ -112,12 +112,12 @@ else
 fi
 
 rm -rdf $tmpdir $jobdir $failed
-#conversion of allts file to mp4 video using ffmpeg..
+#conversion of allts file to mkv video using ffmpeg..
 if [ -z "$skip_ffmpeg" ];then
-    printf "\033[2K\r\033[1;36mEncoding file to mp4 video..\n\033[0m"
-    ffmpeg -i "$file.ts" -loglevel error -stats -c copy "$file.mp4"
+    printf "\033[2K\r\033[1;36mEncoding file to mkv video..\n\033[0m"
+    ffmpeg -i "$file.ts" -loglevel error -stats -c copy "$file.mkv"
 else
-    mv "$file.ts" "$file.mp4"
+    mv "$file.ts" "$file.mkv"
 fi
 
 #cleanup..
